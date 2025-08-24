@@ -1,71 +1,57 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { IoIosArrowUp } from 'react-icons/io' // Import arrow icon from react-icons library
-import CustomHook from './CustomHook' // Assuming you have a custom hook for scrolling
+import { IoIosArrowUp } from 'react-icons/io'
+import useSmartScroll from './CustomHook'
 
 function Contacts() {
   const [listContacts] = useState([
     {
       title: 'Phone Number',
       value: '+40 777 220 506',
-      icon: <FontAwesomeIcon icon={faPhone} style={{ marginRight: '5px' }} />,
+      icon: <FontAwesomeIcon icon={faPhone} style={{ marginRight: 5 }} />,
     },
     {
       title: 'Email',
       value: 'razvtir@yahoo.com',
-      icon: (
-        <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: '5px' }} />
-      ),
+      icon: <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: 5 }} />,
     },
     {
       title: 'Instagram',
       value: '@rxbjr_',
-      icon: (
-        <FontAwesomeIcon icon={faInstagram} style={{ marginRight: '5px' }} />
-      ),
+      icon: <FontAwesomeIcon icon={faInstagram} style={{ marginRight: 5 }} />,
     },
   ])
 
   const divs = useRef([])
-  const scrollTab = useRef()
-  CustomHook(scrollTab, divs)
+  const scrollTab = useRef(null)
+
+  // Use a stable ref setter to avoid pushing duplicates on every render
+  const setDivRef = useCallback((el) => {
+    if (el && !divs.current.includes(el)) divs.current.push(el)
+  }, [])
+
+  // Pass a stable tab id that matches your Redux activeTab value
+  useSmartScroll(scrollTab, divs, 'contact-us')
 
   const [isVisible, setIsVisible] = useState(false)
 
-  // Show button when page is scrolled down
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
-    }
-
-    window.addEventListener('scroll', toggleVisibility)
-
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility)
-    }
+    const toggleVisibility = () => setIsVisible(window.pageYOffset > 300)
+    toggleVisibility()
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
+    return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
-  // Scroll to top when the button is clicked
   const scrollToTop = () => {
-    const c = document.documentElement.scrollTop || document.body.scrollTop
-    if (c > 0) {
-      window.requestAnimationFrame(scrollToTop)
-      window.scrollTo(0, c - c / 8)
-    }
+    // simple + reliable
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
     <section className='contact-us' ref={scrollTab} id='contact-us'>
-      <div
-        className='title-container'
-        ref={(el) => el && divs.current.push(el)}
-      >
+      <div className='title-container' ref={setDivRef}>
         <div className='title'>
           <span>Contact Us</span>
         </div>
@@ -77,12 +63,13 @@ function Contacts() {
           />
         </div>
       </div>
-      <div className='des' ref={(el) => el && divs.current.push(el)}>
-        {/* 20 */}
+
+      <div className='des' ref={setDivRef}>
         These are our contact details. Please reach out to us for any questions
         or requests. We are here for you!
       </div>
-      <div className='list' ref={(el) => el && divs.current.push(el)}>
+
+      <div className='list' ref={setDivRef}>
         {listContacts.map((value, key) => (
           <div className='item' key={key}>
             <h3>
@@ -93,10 +80,16 @@ function Contacts() {
           </div>
         ))}
       </div>
+
       {isVisible && (
-        <div className='scroll-to-top' onClick={scrollToTop}>
+        <button
+          type='button'
+          className='scroll-to-top'
+          onClick={scrollToTop}
+          aria-label='Scroll to top'
+        >
           <IoIosArrowUp className='arrow' />
-        </div>
+        </button>
       )}
     </section>
   )
