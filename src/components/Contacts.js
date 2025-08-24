@@ -8,8 +8,8 @@ import CustomHook from './CustomHook' // Assuming you have a custom hook for scr
 function Contacts() {
   const [listContacts] = useState([
     {
-      title: 'Număr de telefon',
-      value: '+40 770 220 506',
+      title: 'Phone Number',
+      value: '+40 777 220 506',
       icon: <FontAwesomeIcon icon={faPhone} style={{ marginRight: '5px' }} />,
     },
     {
@@ -61,13 +61,13 @@ function Contacts() {
   }
 
   return (
-    <section className='contacteaza-ne' ref={scrollTab} id='contacteaza-ne'>
+    <section className='contact-us' ref={scrollTab} id='contact-us'>
       <div
         className='title-container'
         ref={(el) => el && divs.current.push(el)}
       >
         <div className='title'>
-          <span>Contactează-ne</span>
+          <span>Contact Us</span>
         </div>
         <div className='image-wrapper'>
           <img
@@ -79,8 +79,8 @@ function Contacts() {
       </div>
       <div className='des' ref={(el) => el && divs.current.push(el)}>
         {/* 20 */}
-        Acestea sunt informațiile noastre de contact. Te rugăm să ne contactezi
-        pentru orice întrebare sau solicitare. Suntem aici pentru tine!
+        These are our contact details. Please reach out to us for any questions
+        or requests. We are here for you!
       </div>
       <div className='list' ref={(el) => el && divs.current.push(el)}>
         {listContacts.map((value, key) => (

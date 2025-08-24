@@ -9,31 +9,40 @@ import CustomHook from './CustomHook'
 function Projects() {
   const [listProjects] = useState([
     {
-      name: 'Website in domeniul construcțiilor',
-      des: 'Am dezvoltat un site web pentru o companie de construcții, folosind React și Tailwind CSS pentru a crea o experiență interactivă și atractivă.',
+      name: 'Construction Industry Website',
+      des: 'Developed a website for a construction company using React and Tailwind CSS to create an interactive and attractive experience.',
       mission:
-        'Scopul site-ului este să ofere clienților o prezentare clară și accesibilă a clientului de case modulare și containere, pentru a facilita procesul lor de luare a deciziilor în achiziționarea unei locuințe.',
+        'The goal of the website is to provide clients with a clear and accessible presentation of modular houses and containers to facilitate their decision-making process when purchasing a home.',
       language: 'React/Tailwind',
       images: '/Constructii.png',
       link: 'https://confectiimetaalice.netlify.app/',
     },
     {
-      name: 'Website pentru cofetărie',
-      des: 'Am dezvoltat un site web pentru o cofetărie, folosind WordPress pentru a crea o experiență interactivă și atrăgătoare pentru vizitatori.',
+      name: 'Bakery Website',
+      des: 'Developed a website for a bakery using WordPress to create an engaging and interactive experience for visitors.',
       mission:
-        'Scopul site-ului este să prezinte clienților o gamă diversă și tentantă de produse de patiserie și cofetărie, facilitând astfel procesul lor de alegere și comandă.',
-      language: 'Wordpress',
+        'The goal of the website is to showcase a diverse and tempting range of pastry and bakery products, simplifying the process of selection and ordering for customers.',
+      language: 'WordPress',
       images: '/Acadele.png',
       link: 'https://www.shop.bytedevs.ro/',
     },
     {
-      name: 'Website pentru frizerie',
-      des: 'Am dezvoltat un site web pentru o frizerie, folosind React, Tailwind CSS și Node.js pentru a crea o experiență interactivă și atrăgătoare pentru clienți.',
+      name: 'Barbershop Website',
+      des: 'Developed a website for a barbershop using React, Tailwind CSS, and Node.js to create an engaging and interactive experience for customers.',
       mission:
-        'Scopul site-ului este să ofere clienților o prezentare clară și informativă a serviciilor noastre de tuns și coafat, pentru a-i ajuta să aleagă cu încredere serviciul potrivit pentru nevoile lor',
+        'The goal of the website is to provide clients with a clear and informative presentation of our haircutting and styling services, helping them confidently choose the right service for their needs.',
       language: 'React/Tailwind/Node.js',
       images: '/Frizerie.png',
       link: 'https://geeks4life.netlify.app/',
+    },
+    {
+      name: 'AI Shorts Generator',
+      des: 'Developed a platform for generating AI-powered shorts using advanced algorithms for content creation and video production.',
+      mission:
+        'The goal of this project is to simplify the process of creating engaging and dynamic short videos for various platforms, leveraging the power of AI to deliver high-quality results efficiently.',
+      language: 'NextJS/Node.js/MongoDB',
+      images: '/AIShorts.png',
+      link: 'https://www.rxbshorts.com/',
     },
   ])
 
@@ -46,18 +55,18 @@ function Projects() {
   }
 
   return (
-    <section className='proiecte' ref={scrollTab} id='proiecte'>
+    <section className='projects' ref={scrollTab} id='projects'>
       <div className='title' ref={(el) => el && divs.current.push(el)}>
-        Proiectele noastre
+        Our Projects
       </div>
       <div
         className='des'
         ref={(el) => el && divs.current.push(el)}
         style={{ cursor: 'auto' }}
       >
-        Proiectele noastre sunt emblema inovației și excelenței în domeniul
-        dezvoltării web. Descoperă creativitatea și pasiunea noastră reflectate
-        în fiecare linie de cod și fiecare detaliu al proiectelor noastre.
+        Our projects are the epitome of innovation and excellence in web
+        development. Discover our creativity and passion reflected in every line
+        of code and every detail of our work.
       </div>
       <div className='list'>
         {listProjects.map((value, key) => (
@@ -80,7 +89,7 @@ function Projects() {
                   <FontAwesomeIcon icon={faPersonCircleQuestion} />
                 </div>
                 <div>
-                  <h4>Misiune</h4>
+                  <h4>Mission</h4>
                   <div className='des'>{value.mission}</div>
                 </div>
               </div>
@@ -89,7 +98,7 @@ function Projects() {
                   <FontAwesomeIcon icon={faEarthAmericas} />
                 </div>
                 <div>
-                  <h4>Tehnologii</h4>
+                  <h4>Technologies</h4>
                   <div className='des'>{value.language}</div>
                 </div>
               </div>

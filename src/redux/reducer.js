@@ -1,5 +1,5 @@
 const initialState = {
-  activeTab: 'acasa',
+  activeTab: 'home', // Updated to match the renamed 'home' tab
 }
 
 const rootReducer = (state = initialState, action) => {

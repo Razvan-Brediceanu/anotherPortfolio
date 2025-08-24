@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const NavBar = ({ activeTab, changeTabActive }) => {
   const linkNav = useMemo(
-    () => ['acasa', 'abilitati', 'proiecte', 'contacteaza-ne'],
+    () => ['home', 'skills', 'projects', 'contact-us'],
     []
   ) // Initialize linkNav array using useMemo
 
@@ -69,7 +69,13 @@ const NavBar = ({ activeTab, changeTabActive }) => {
     <header>
       <div className='logo'>
         <img src='/icons8developer.png' alt='' />
-        <span className='byteDevsText'>ByteDevs</span>
+        <span
+          className='byteDevsText'
+          onClick={() => handleClick('home')} // Scroll to home on click
+          style={{ cursor: 'pointer' }} // Add a pointer cursor
+        >
+          ByteDevs
+        </span>
       </div>
       <nav className={`burger-menu ${isMenuOpen ? 'open' : ''}`}>
         {/* Apply a class when menu is open */}

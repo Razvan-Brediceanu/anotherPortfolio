@@ -17,43 +17,43 @@ function Skills() {
   const [listSkills] = useState([
     {
       name: 'HTML',
-      des: 'Explorează frumusețea și puterea structurii web cu HTML. Construiește fundația perfectă pentru proiectele tale online',
+      des: 'Explore the beauty and power of web structure with HTML. Build the perfect foundation for your online projects.',
       icon: faHtml5,
     },
     {
       name: 'CSS',
-      des: 'Transformă simplul în spectaculos cu CSS. Creează stiluri captivante și conferă site-ului tău o prezență de neuitat în mediul online.',
+      des: 'Transform simplicity into spectacle with CSS. Create captivating styles and give your website an unforgettable online presence.',
       icon: faCss3,
     },
     {
-      name: 'Javascript',
-      des: 'Dă viață ideilor tale cu Javascript. Experimentează libertatea creativă și creează interacțiuni dinamice pentru utilizatorii tăi',
+      name: 'JavaScript',
+      des: 'Bring your ideas to life with JavaScript. Experience creative freedom and create dynamic interactions for your users.',
       icon: faJs,
     },
     {
       name: 'ReactJs',
-      des: 'Descoperă potențialul nelimitat al dezvoltării web cu ReactJs. Creează aplicații web impresionante și oferă utilizatorilor o experiență captivantă și interactivă.',
+      des: 'Discover the unlimited potential of web development with ReactJs. Build impressive web applications and deliver engaging and interactive user experiences.',
       icon: faReact,
     },
     {
       name: 'WordPress',
-      des: 'WordPress este motorul web-ului modern, oferind o platformă versatilă pentru construirea și gestionarea site-urilor. Cu o interfață ușor de folosit și o gamă largă de plugin-uri, WordPress facilitează crearea unor site-uri captivante și personalizate.',
+      des: 'WordPress powers the modern web, providing a versatile platform for building and managing websites. With an easy-to-use interface and a wide range of plugins, WordPress facilitates the creation of captivating and customized websites.',
       icon: faWordpress,
     },
     {
       name: 'Node.js',
-      des: 'Node.js revoluționează dezvoltarea backend-ului web, oferind un mediu de execuție rapid și eficient. Cu suportul pentru I/O non-blocking, Node.js permite crearea de aplicații web scalabile și performante.',
+      des: 'Node.js revolutionizes backend web development, offering a fast and efficient runtime environment. With support for non-blocking I/O, Node.js enables the creation of scalable and high-performance web applications.',
       icon: faNodeJs,
     },
   ])
   return (
-    <section className='abilitati' ref={scrollTab} id='abilitati'>
+    <section className='skills' ref={scrollTab} id='skills'>
       <div className='title' ref={(el) => el && divs.current.push(el)}>
-        Abilitățile noastre
+        Our Skills
       </div>
       <div className='des' ref={(el) => el && divs.current.push(el)}>
         {/* 20 */}
-        Soluții web inovatoare, design de vârf, performanță optimizată.
+        Innovative web solutions, cutting-edge design, optimized performance.
       </div>
       <div className='list'>
         {listSkills.map((value, key) => (

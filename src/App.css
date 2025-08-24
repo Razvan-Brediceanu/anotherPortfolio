@@ -276,7 +276,7 @@ section {
   top: 0;
 }
 
-section.acasa {
+section.home {
   padding-top: 150px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -360,7 +360,7 @@ section.acasa {
   }
 }
 
-section.abilitati {
+section.skills {
   & .title {
     text-align: center;
     font-size: 5vw;
@@ -412,7 +412,7 @@ section.abilitati {
   }
 }
 
-section.proiecte {
+section.projects {
   & .title {
     margin-top: 100px;
     text-align: center;
@@ -485,7 +485,7 @@ section.proiecte {
   }
 }
 
-section.contacteaza-ne {
+section.contact-us {
   padding-bottom: 220px;
   & .title {
     text-align: center;
@@ -526,7 +526,7 @@ section.contacteaza-ne {
 }
 
 @media screen and (max-width: 1023px) {
-  section.acasa {
+  section.home {
     & .content {
       & .name {
         font-size: 4em;
@@ -543,7 +543,7 @@ section.contacteaza-ne {
 @media screen and (max-width: 767px) {
   section {
     padding: 20px;
-    &.acasa {
+    &.home {
       grid-template-columns: 1fr;
       padding-top: 70px;
       & .content {
@@ -556,7 +556,7 @@ section.contacteaza-ne {
         grid-row-start: 1;
       }
     }
-    &.proiecte {
+    &.projects {
       & .list {
         & .item {
           grid-template-columns: 1fr;

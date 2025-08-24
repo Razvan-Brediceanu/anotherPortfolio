@@ -33,38 +33,28 @@ function Home() {
   }, []) // Run effect only once on component mount
 
   return (
-    <section ref={scrollTab} className='acasa' id='acasa'>
+    <section ref={scrollTab} className='home' id='home'>
       <div className='content'>
         <div className='name'>
-          NOI SUNTEM <br /> <span className='byteDevs'></span>
+          WE ARE <br /> <span className='byteDevs'></span>
         </div>
         <div className='des'>
           {/* 30 */}
-          Căutați să vă îmbunătățiți prezența online? Alegeți ByteDevs pentru
-          soluții de dezvoltare web de vârf. Echipa noastră creează site-uri web
-          personalizate, cu un accent deosebit pe inovație și experiența
-          utilizatorului. Cu designuri elegante și funcționalitate impecabilă,
-          ByteDevs vă ajută să vă evidențiați în peisajul digital și să vă
-          maximizați conversiile. Alegeți ByteDevs pentru a vă transforma
-          viziunea în realitate!
+          Looking to enhance your online presence? Choose ByteDevs for top-notch
+          web development solutions. Our team creates customized websites with a
+          strong focus on innovation and user experience. With sleek designs and
+          flawless functionality, ByteDevs helps you stand out in the digital
+          landscape and maximize your conversions. Choose ByteDevs to turn your
+          vision into reality!
         </div>
-
-        <a
-          href='/democv.pdf'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='animation active '
-        >
-          Download My CV
-        </a>
       </div>
       <div className='avatar'>
         <div className='card'>
-          <img src='/myAvatar.jpg' alt='' />
+          <img src='/myAvatar2.jpg' alt='' />
           <div className='info'>
             <div>Web Developer</div>
             <div className='byteDevs'>BYTEDEVS</div>
-            <div>03/12</div>
+            <div>03/20</div>
             <div>Razvan</div>
           </div>
         </div>
