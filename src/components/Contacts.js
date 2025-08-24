@@ -57,7 +57,7 @@ function Contacts() {
         </div>
         <div className='image-wrapper'>
           <img
-            src={`${process.env.PUBLIC_URL}/laptopbg.png`}
+            src={`${process.env.PUBLIC_URL}/LaptopBG.png`}
             alt='Contact'
             className='contact-image'
           />
